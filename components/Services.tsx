@@ -1,44 +1,56 @@
 import React from "react";
-import { Wrench, Shield, Gear, Clock } from "./Icons";
+import { Wrench, Shield, Gear, Clock, AlertCircle, Sparkles } from "./Icons";
 import styles from "./Services.module.css";
 
 const SERVICES_DATA = [
   {
     icon: <Wrench size={32} />,
-    title: "Reparación de Resortes y Cables",
-    description: "Reemplazo inmediato de resortes de torsión rotos, cables dañados, poleas y rodillos desgastados para garantizar un funcionamiento seguro.",
-    highlight: "Resortes de alta duración"
-  },
-  {
-    icon: <Shield size={32} />,
-    title: "Instalación de Portones Modernos",
-    description: "Amplia gama de diseños premium en acero, aluminio, madera y vidrio esmerilado. Sistemas automatizados con control inteligente.",
-    highlight: "Modelos insulados térmicos"
+    title: "Broken Spring Replacement",
+    description: "High-cycle torsion and extension spring replacement. Correct sizing, tension calibration, and durable steel parts with optional lifetime warranties.",
+    highlight: "Top service in Chicago"
   },
   {
     icon: <Gear size={32} />,
-    title: "Motores y Motores Inteligentes",
-    description: "Instalación y reparación de motores de cadena y correa silenciosos. Integración con Wi-Fi, apps móviles y cámaras integradas.",
-    highlight: "Motores LiftMaster / Chamberlain"
+    title: "Opener Repair & Installation",
+    description: "Repairing and installing belt and chain openers (LiftMaster, Chamberlain, Genie). Integration with Wi-Fi, mobile apps, and smart camera accessories.",
+    highlight: "Smart systems authorized"
+  },
+  {
+    icon: <Shield size={32} />,
+    title: "New Garage Door Installation",
+    description: "Upgrade your curb appeal with customized steel, aluminum glass, or real-wood insulated doors. Built to handle heavy Chicagoland winter weather.",
+    highlight: "Clopay & Amarr partner"
   },
   {
     icon: <Clock size={32} />,
-    title: "Mantenimiento Preventivo",
-    description: "Calibración, lubricación profunda, balanceo de portones y pruebas de seguridad de sensores para prolongar la vida útil del sistema.",
-    highlight: "Recomendado anual"
+    title: "Garage Door Off-Track Repair",
+    description: "If your door is crooked, stuck, or off its track, don't attempt to close it. Our fast dispatch team resets rollers, drums, and snaps safely.",
+    highlight: "Same-day response"
+  },
+  {
+    icon: <AlertCircle size={32} />,
+    title: "Commercial Overhead Doors",
+    description: "Full service for warehouse doors, dock levelers, fire doors, and commercial rolling steel shutters. Fast emergency repairs to minimize business downtime.",
+    highlight: "Licensed & bonded"
+  },
+  {
+    icon: <Sparkles size={32} />,
+    title: "Preventive Tuning & Safety Inspections",
+    description: "Visual inspection, sensor testing, hardware tightening, and deep lubrication of hinges and rollers. Avoid major emergency repairs before they happen.",
+    highlight: "Recommend yearly"
   }
 ];
 
 export default function Services() {
   return (
-    <section id="servicios" className="section">
+    <section id="services" className="section">
       <div className="glow-bg"></div>
       <div className="container">
         <div className="section-header">
-          <span className="section-badge">Lo Que Hacemos</span>
-          <h2 className="section-title">Servicios Especializados en Portones</h2>
+          <span className="section-badge">Service Catalog</span>
+          <h2 className="section-title">Professional Overhead Door Solutions</h2>
           <p className="section-desc">
-            Brindamos soluciones integrales de alta ingeniería para portones de cochera residenciales y comerciales.
+            We provide local certified technicians specializing in residential and commercial garage door repairs, automation, and replacements.
           </p>
         </div>
 

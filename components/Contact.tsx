@@ -10,7 +10,7 @@ export default function Contact() {
     name: "",
     phone: "",
     email: "",
-    service: "reparacion",
+    service: "repair",
     date: "",
     message: "",
   });
@@ -24,33 +24,32 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API Submission
     setTimeout(() => {
       setSubmitted(true);
     }, 800);
   };
 
   return (
-    <section id="contacto" className="section">
+    <section id="contact" className="section">
       <div className="container">
         <div className={styles.contactGrid}>
           {/* Info Side */}
           <div className={styles.infoColumn}>
-            <span className="section-badge">Contacto</span>
-            <h2 className={styles.infoTitle}>Agenda tu Visita Técnica Gratis</h2>
+            <span className="section-badge">Booking Inquiry</span>
+            <h2 className={styles.infoTitle}>Schedule a Certified Technician Today</h2>
             <p className={styles.infoDesc}>
-              ¿Tienes una emergencia o deseas cambiar tu portón? Nuestro equipo técnico está listo para asistirte.
-              Comunícate por teléfono para atención inmediata 24/7 o completa el formulario.
+              Do you have a broken spring, cable off track, or require a new motor install? 
+              Get direct 24/7 service by calling our hotline or filling out our quick dispatch calendar below.
             </p>
 
             <div className={styles.contactDetails}>
-              <a href="tel:+18005550199" className={styles.detailCard}>
+              <a href="tel:+17738392852" className={styles.detailCard}>
                 <div className={styles.detailIcon}>
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className={styles.detailLabel}>Línea Directa 24/7</h4>
-                  <p className={styles.detailVal}>+1 (800) 555-0199</p>
+                  <h4 className={styles.detailLabel}>Direct Hotline (24/7 Dispatch)</h4>
+                  <p className={styles.detailVal}>(773) 839-2852</p>
                 </div>
               </a>
 
@@ -59,8 +58,8 @@ export default function Contact() {
                   <Clock size={24} />
                 </div>
                 <div>
-                  <h4 className={styles.detailLabel}>Horario de Atención</h4>
-                  <p className={styles.detailVal}>Lunes a Domingo — Todo el día</p>
+                  <h4 className={styles.detailLabel}>Availability</h4>
+                  <p className={styles.detailVal}>Monday - Sunday, 24 Hours Open</p>
                 </div>
               </div>
 
@@ -69,8 +68,8 @@ export default function Contact() {
                   <Shield size={24} />
                 </div>
                 <div>
-                  <h4 className={styles.detailLabel}>Cobertura Total</h4>
-                  <p className={styles.detailVal}>Servicio residencial y comercial a domicilio</p>
+                  <h4 className={styles.detailLabel}>Licensed Area</h4>
+                  <p className={styles.detailVal}>All Chicagoland Cities & Suburbs</p>
                 </div>
               </div>
             </div>
@@ -83,42 +82,42 @@ export default function Contact() {
                 <div className={styles.successIcon}>
                   <Check size={36} />
                 </div>
-                <h3 className={styles.successTitle}>¡Solicitud Recibida!</h3>
+                <h3 className={styles.successTitle}>Request Sent!</h3>
                 <p className={styles.successDesc}>
-                  Nos pondremos en contacto contigo en los próximos 15 minutos para confirmar la fecha y hora de tu inspección gratuita.
+                  Our Chicago dispatcher will call you in less than 15 minutes to confirm your technician\'s arrival window.
                 </p>
                 <button 
                   className="btn btn-secondary" 
                   onClick={() => setSubmitted(false)}
                   style={{ marginTop: "1rem" }}
                 >
-                  Enviar otra solicitud
+                  Send another inquiry
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.formRow}>
                   <div className="form-group">
-                    <label className="form-label" htmlFor="name">Nombre Completo</label>
+                    <label className="form-label" htmlFor="contactName">Your Name</label>
                     <input
                       type="text"
-                      id="name"
+                      id="contactName"
                       name="name"
                       required
-                      placeholder="Ej. Juan Pérez"
+                      placeholder="e.g. John Doe"
                       className="form-control"
                       value={formData.name}
                       onChange={handleChange}
                     />
                   </div>
                   <div className="form-group">
-                    <label className="form-label" htmlFor="phone">Número de Teléfono</label>
+                    <label className="form-label" htmlFor="contactPhone">Phone Number</label>
                     <input
                       type="tel"
-                      id="phone"
+                      id="contactPhone"
                       name="phone"
                       required
-                      placeholder="Ej. +1 555-1234"
+                      placeholder="e.g. (773) 839-2852"
                       className="form-control"
                       value={formData.phone}
                       onChange={handleChange}
@@ -127,13 +126,13 @@ export default function Contact() {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="email">Correo Electrónico</label>
+                  <label className="form-label" htmlFor="contactEmail">Email Address</label>
                   <input
                     type="email"
-                    id="email"
+                    id="contactEmail"
                     name="email"
                     required
-                    placeholder="correo@ejemplo.com"
+                    placeholder="john@example.com"
                     className="form-control"
                     value={formData.email}
                     onChange={handleChange}
@@ -142,25 +141,25 @@ export default function Contact() {
 
                 <div className={styles.formRow}>
                   <div className="form-group">
-                    <label className="form-label" htmlFor="service">Servicio Requerido</label>
+                    <label className="form-label" htmlFor="contactService">Required Service</label>
                     <select
-                      id="service"
+                      id="contactService"
                       name="service"
                       className="form-control"
                       value={formData.service}
                       onChange={handleChange}
                     >
-                      <option value="reparacion">Reparación de Resortes/Cables</option>
-                      <option value="instalacion">Instalación de Portón Nuevo</option>
-                      <option value="motor">Cambio/Reparación de Motor</option>
-                      <option value="mantenimiento">Mantenimiento Preventivo</option>
+                      <option value="repair">Broken Spring / Cable Repair</option>
+                      <option value="install">New Garage Door Install</option>
+                      <option value="motor">Opener / Motor Troubleshooting</option>
+                      <option value="tuneup">Safety Check & Tune-up</option>
                     </select>
                   </div>
                   <div className="form-group">
-                    <label className="form-label" htmlFor="date">Fecha Preferida</label>
+                    <label className="form-label" htmlFor="contactDate">Preferred Date</label>
                     <input
                       type="date"
-                      id="date"
+                      id="contactDate"
                       name="date"
                       required
                       className="form-control"
@@ -171,12 +170,12 @@ export default function Contact() {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label" htmlFor="message">Detalles del problema / Notas</label>
+                  <label className="form-label" htmlFor="contactMessage">Details (e.g. Door brand, symptoms)</label>
                   <textarea
-                    id="message"
+                    id="contactMessage"
                     name="message"
                     rows={4}
-                    placeholder="Describe brevemente lo que ocurre con tu portón (ej. resorte roto, no abre con el control, motor ruidoso...)"
+                    placeholder="e.g. My garage door spring snapped this morning, door won't lift. Need morning appointment if possible."
                     className="form-control"
                     value={formData.message}
                     onChange={handleChange}
@@ -184,7 +183,7 @@ export default function Contact() {
                 </div>
 
                 <button type="submit" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
-                  Agendar Inspección Gratis
+                  Schedule Free On-Site Quote
                 </button>
               </form>
             )}

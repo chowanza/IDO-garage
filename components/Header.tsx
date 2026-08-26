@@ -15,19 +15,19 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.navContainer}`}>
         <a href="#" className={styles.logo}>
-          <span className={styles.logoIcon}>⚡</span>
-          <span className={styles.logoText}>ProGlide</span>
-          <span className={styles.logoSub}>Doors</span>
+          <span className={styles.logoIcon}>🆘</span>
+          <span className={styles.logoText}>SOS</span>
+          <span className={styles.logoSub}>Garage Group</span>
         </a>
 
         {/* Desktop Nav */}
         <nav className={styles.desktopNav}>
-          <a href="#servicios" className={styles.navLink}>Servicios</a>
-          <a href="#cotizador" className={styles.navLink}>Cotizador</a>
-          <a href="#contacto" className={styles.navLink}>Contacto</a>
-          <a href="tel:+18005550199" className="btn btn-primary">
+          <a href="#services" className={styles.navLink}>Services</a>
+          <a href="#estimator" className={styles.navLink}>Estimator</a>
+          <a href="#contact" className={styles.navLink}>Contact</a>
+          <a href="tel:+17738392852" className="btn btn-primary">
             <Phone size={18} />
-            Llamar Ahora
+            (773) 839-2852
           </a>
         </nav>
 
@@ -35,7 +35,7 @@ export default function Header() {
         <button 
           className={styles.menuButton} 
           onClick={toggleMenu}
-          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <Close size={24} /> : <Menu size={24} />}
         </button>
@@ -43,12 +43,12 @@ export default function Header() {
 
       {/* Mobile Nav */}
       <div className={`${styles.mobileNav} ${isOpen ? styles.mobileNavOpen : ""}`}>
-        <a href="#servicios" className={styles.mobileNavLink} onClick={toggleMenu}>Servicios</a>
-        <a href="#cotizador" className={styles.mobileNavLink} onClick={toggleMenu}>Cotizador</a>
-        <a href="#contacto" className={styles.mobileNavLink} onClick={toggleMenu}>Contacto</a>
-        <a href="tel:+18005550199" className={`btn btn-primary ${styles.mobileNavBtn}`} onClick={toggleMenu}>
+        <a href="#services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</a>
+        <a href="#estimator" className={styles.mobileNavLink} onClick={toggleMenu}>Estimator</a>
+        <a href="#contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</a>
+        <a href="tel:+17738392852" className={`btn btn-primary ${styles.mobileNavBtn}`} onClick={toggleMenu}>
           <Phone size={18} />
-          Llamar Ahora
+          Call (773) 839-2852
         </a>
       </div>
     </header>

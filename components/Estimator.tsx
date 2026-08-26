@@ -18,9 +18,9 @@ export default function Estimator() {
     let motorCost = 0;
 
     if (service === "repair") {
-      basePrice = 120; // Repair base price
+      basePrice = 120; // Repair base price (diagnostics + labor starting point)
       multiplier = size === "single" ? 1.0 : 1.3;
-      materialCost = 0; // Repair usually doesn't select new materials
+      materialCost = 0; // Repair usually doesn't select new door materials
       
       // Opener repair or replacement cost
       if (motor === "belt") motorCost = 320;
@@ -30,9 +30,9 @@ export default function Estimator() {
       multiplier = size === "single" ? 1.0 : 1.6;
       
       if (material === "steel") materialCost = 0;
-      if (material === "insulated") materialCost = 300;
-      if (material === "wood") materialCost = 700;
-      if (material === "glass") materialCost = 1100;
+      if (material === "insulated") materialCost = 350;
+      if (material === "wood") materialCost = 800;
+      if (material === "glass") materialCost = 1200;
 
       if (motor === "belt") motorCost = 380;
       if (motor === "smart") motorCost = 580;
@@ -58,13 +58,13 @@ export default function Estimator() {
   };
 
   return (
-    <section id="cotizador" className="section">
+    <section id="estimator" className="section">
       <div className="container">
         <div className="section-header">
-          <span className="section-badge">Cotización Instantánea</span>
-          <h2 className="section-title">Calcula el Costo de tu Portón</h2>
+          <span className="section-badge">Instant Quote</span>
+          <h2 className="section-title">Estimate Your Project Cost</h2>
           <p className="section-desc">
-            Usa nuestro estimador inteligente interactivo para obtener un rango aproximado de precios en segundos.
+            Use our interactive estimator tool to calculate a budget range for your garage door services in real-time.
           </p>
         </div>
 
@@ -73,42 +73,42 @@ export default function Estimator() {
           <div className="glass-card">
             {/* Step 1: Service */}
             <div className={styles.stepSection}>
-              <h3 className={styles.stepTitle}>1. Tipo de Servicio</h3>
+              <h3 className={styles.stepTitle}>1. Select Service Type</h3>
               <div className={styles.radioGroup}>
                 <button
                   type="button"
                   className={`${styles.selectButton} ${service === "repair" ? styles.active : ""}`}
                   onClick={() => handleServiceChange("repair")}
                 >
-                  Reparación / Mantenimiento
+                  Repair / Spring / Cable Fix
                 </button>
                 <button
                   type="button"
                   className={`${styles.selectButton} ${service === "install" ? styles.active : ""}`}
                   onClick={() => handleServiceChange("install")}
                 >
-                  Instalación de Portón Nuevo
+                  New Garage Door Install
                 </button>
               </div>
             </div>
 
             {/* Step 2: Size */}
             <div className={styles.stepSection}>
-              <h3 className={styles.stepTitle}>2. Tamaño del Garaje</h3>
+              <h3 className={styles.stepTitle}>2. Choose Garage Size</h3>
               <div className={styles.radioGroup}>
                 <button
                   type="button"
                   className={`${styles.selectButton} ${size === "single" ? styles.active : ""}`}
                   onClick={() => setSize("single")}
                 >
-                  Sencillo (1 Auto / Ancho regular)
+                  Single Door (1 Car / 8-9ft wide)
                 </button>
                 <button
                   type="button"
                   className={`${styles.selectButton} ${size === "double" ? styles.active : ""}`}
                   onClick={() => setSize("double")}
                 >
-                  Doble (2 Autos / Ancho amplio)
+                  Double Door (2 Cars / 16ft wide)
                 </button>
               </div>
             </div>
@@ -116,13 +116,13 @@ export default function Estimator() {
             {/* Step 3: Material (only for installation) */}
             {service === "install" && (
               <div className={styles.stepSection}>
-                <h3 className={styles.stepTitle}>3. Material y Estilo del Portón</h3>
+                <h3 className={styles.stepTitle}>3. Select Door Material & Style</h3>
                 <div className={styles.materialsGrid}>
                   {[
-                    { id: "steel", name: "Acero Clásico", desc: "Duradero y económico" },
-                    { id: "insulated", name: "Acero Insulado", desc: "Aislamiento térmico premium" },
-                    { id: "wood", name: "Madera Rústica", desc: "Elegancia natural y calidez" },
-                    { id: "glass", name: "Vidrio & Aluminio", desc: "Estilo moderno de lujo" },
+                    { id: "steel", name: "Standard Steel Panel", desc: "Durable, cost-effective classic" },
+                    { id: "insulated", name: "Insulated Sandwich Steel", desc: "Energy efficient, high durability" },
+                    { id: "wood", name: "Custom Carriage Wood", desc: "Rustic elegance & warmth" },
+                    { id: "glass", name: "Modern Glass & Aluminum", desc: "Full view luxury contemporary look" },
                   ].map((mat) => (
                     <button
                       key={mat.id}
@@ -146,13 +146,13 @@ export default function Estimator() {
             {/* Step 4: Opener/Motor */}
             <div className={styles.stepSection}>
               <h3 className={styles.stepTitle}>
-                {service === "install" ? "4. Sistema de Apertura (Motor)" : "3. ¿Requiere motor nuevo?"}
+                {service === "install" ? "4. Add Smart Opener (Optional)" : "3. Do you need a new opener?"}
               </h3>
               <div className={styles.materialsGrid}>
                 {[
-                  { id: "none", name: "Mantener Actual / Ninguno", desc: "Sin costo adicional" },
-                  { id: "belt", name: "Motor de Correa Premium", desc: "Ultrasilencioso con control" },
-                  { id: "smart", name: "Motor Inteligente Smart", desc: "Conexión Wi-Fi, App y Cámara" },
+                  { id: "none", name: "Keep Current / None", desc: "Use existing manual or motor system" },
+                  { id: "belt", name: "Quiet Belt-Drive Opener", desc: "Ultra-quiet operation with backup controls" },
+                  { id: "smart", name: "Smart Wi-Fi Camera Opener", desc: "Integrates with smartphone app & live video feed" },
                 ].map((mot) => (
                   <button
                     key={mot.id}
@@ -178,7 +178,7 @@ export default function Estimator() {
             <div className={`${styles.stickyCard} glass-card`}>
               <div className={styles.glowHeader}>
                 <Sparkles size={20} className={styles.sparkleIcon} />
-                Presupuesto Estimado
+                Calculated Price Range
               </div>
 
               <div className={styles.priceContainer}>
@@ -189,50 +189,50 @@ export default function Estimator() {
               </div>
 
               <p className={styles.priceDesc}>
-                *Este es un rango estimado aproximado. El precio final se determinará tras una inspección técnica presencial.
+                *Estimated range including standard labor. Final price depends on dynamic on-site engineering and track conditions.
               </p>
 
               <div className={styles.breakdownList}>
                 <div className={styles.breakdownItem}>
-                  <span>Servicio:</span>
+                  <span>Service:</span>
                   <span className={styles.breakdownVal}>
-                    {service === "repair" ? "Reparación/Ajuste" : "Instalación Nueva"}
+                    {service === "repair" ? "Repair / Balance" : "New Installation"}
                   </span>
                 </div>
                 <div className={styles.breakdownItem}>
-                  <span>Tamaño:</span>
+                  <span>Door Size:</span>
                   <span className={styles.breakdownVal}>
-                    {size === "single" ? "Sencillo (1 Auto)" : "Doble (2 Autos)"}
+                    {size === "single" ? "Single (1 Car)" : "Double (2 Cars)"}
                   </span>
                 </div>
                 {service === "install" && (
                   <div className={styles.breakdownItem}>
-                    <span>Material:</span>
+                    <span>Door Type:</span>
                     <span className={styles.breakdownVal}>
-                      {material === "steel" && "Acero Clásico"}
-                      {material === "insulated" && "Acero Insulado"}
-                      {material === "wood" && "Madera"}
-                      {material === "glass" && "Vidrio y Aluminio"}
+                      {material === "steel" && "Standard Steel"}
+                      {material === "insulated" && "Insulated Steel"}
+                      {material === "wood" && "Carriage Wood"}
+                      {material === "glass" && "Glass & Aluminum"}
                     </span>
                   </div>
                 )}
                 <div className={styles.breakdownItem}>
-                  <span>Motor:</span>
+                  <span>Opener:</span>
                   <span className={styles.breakdownVal}>
-                    {motor === "none" && "Sin motor nuevo"}
-                    {motor === "belt" && "Silencioso de Correa"}
-                    {motor === "smart" && "Smart Wi-Fi (+Cámara)"}
+                    {motor === "none" && "None"}
+                    {motor === "belt" && "Belt Drive"}
+                    {motor === "smart" && "Smart Wi-Fi"}
                   </span>
                 </div>
               </div>
 
               <div className={styles.noticeAlert}>
                 <AlertCircle size={20} />
-                <span>¡Inspección y presupuesto escrito 100% Gratis en tu domicilio!</span>
+                <span>On-site safety inspection and itemized estimates are 100% Free!</span>
               </div>
 
-              <a href="#contacto" className="btn btn-primary" style={{ width: "100%", marginTop: "1.5rem" }}>
-                Reservar Inspección Gratis
+              <a href="#contact" className="btn btn-primary" style={{ width: "100%", marginTop: "1.5rem" }}>
+                Book Free On-Site Inspection
               </a>
             </div>
           </div>

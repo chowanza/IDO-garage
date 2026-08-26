@@ -1,16 +1,16 @@
-/* CSS Design System for ProGlide Garage Doors */
+/* CSS Design System for SOS Garage Door Group */
 
 :root {
   /* Colors */
-  --bg-dark: #07090e;
+  --bg-dark: #06080c;
   --bg-card: rgba(15, 23, 42, 0.65);
   --bg-card-hover: rgba(30, 41, 59, 0.8);
   --border-light: rgba(255, 255, 255, 0.07);
-  --border-glow: rgba(245, 158, 11, 0.4);
+  --border-glow: rgba(184, 29, 36, 0.4);
   
-  --primary: #f59e0b; /* Amber Gold */
-  --primary-hover: #d97706;
-  --primary-glow: rgba(245, 158, 11, 0.15);
+  --primary: #b81d24; /* Crimson Red */
+  --primary-hover: #9c131a;
+  --primary-glow: rgba(184, 29, 36, 0.15);
   
   --secondary: #38bdf8; /* Tech Blue */
   --secondary-glow: rgba(56, 189, 248, 0.15);
