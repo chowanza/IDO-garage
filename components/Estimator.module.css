@@ -1,0 +1,240 @@
+.estimatorGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.stepSection {
+  margin-bottom: 2.5rem;
+}
+
+.stepSection:last-child {
+  margin-bottom: 0;
+}
+
+.stepTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  border-left: 3px solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+.radioGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.selectButton {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  padding: 1rem;
+  font-family: var(--font-headings);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.selectButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.selectButton.active {
+  background: var(--primary-glow);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+.materialsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.materialCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.materialCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--text-muted);
+}
+
+.materialCardActive {
+  background: var(--primary-glow);
+  border-color: var(--primary);
+}
+
+.materialCheck {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.materialCardActive .materialCheck {
+  border-color: var(--primary);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.materialInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.matName {
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.matDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Sidebar Estimate Card */
+.estimateSidebar {
+  position: sticky;
+  top: 110px;
+}
+
+.stickyCard {
+  border-color: var(--border-glow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.glowHeader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-glow);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: var(--primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.sparkleIcon {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.currency {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.priceVal {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: var(--font-headings);
+}
+
+.priceDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.breakdownList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.breakdownItem span:first-child {
+  color: var(--text-secondary);
+}
+
+.breakdownVal {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.noticeAlert {
+  display: flex;
+  gap: 0.75rem;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.noticeAlert svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.95); }
+}
+
+@media (max-width: 992px) {
+  .estimatorGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .estimateSidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 576px) {
+  .radioGroup {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
