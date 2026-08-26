@@ -10,7 +10,7 @@ export default function MobileDispatchBar() {
       {/* Call Dispatch Button */}
       <a href="tel:+17738392852" className={`${styles.btn} ${styles.btnPrimary}`}>
         <Phone size={18} />
-        <span>Call Dispatch</span>
+        <span>Call (773) 839-2852</span>
       </a>
 
       {/* Book Online Button */}

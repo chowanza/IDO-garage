@@ -60,10 +60,16 @@
   margin-bottom: 1rem;
 }
 
-.address {
+.addressLink {
   font-size: 0.9rem;
   color: var(--text-primary);
   font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.addressLink:hover {
+  color: var(--primary);
 }
 
 .columnTitle {

@@ -23,9 +23,14 @@ export default function Footer() {
           <p className={styles.description}>
             Residential and commercial garage door services, spring repair, and opener installation. Serving Chicago and suburbs 24/7.
           </p>
-          <p className={styles.address}>
+          <a 
+            href="https://maps.app.goo.gl/mYnmHA8GqxmoZ4qUA" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.addressLink}
+          >
             📍 6200 N Francisco Ave, Chicago, IL 60659
-          </p>
+          </a>
         </div>
 
         {/* Links Column */}

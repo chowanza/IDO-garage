@@ -41,11 +41,18 @@ export default function Hero() {
             </p>
 
             <div className={styles.trustBadges}>
-              <div className={styles.trustItem}>
-                <span className={styles.stars}>★★★★★</span>
-                <span className={styles.ratingVal}>4.9/5 Rating</span>
-                <span className={styles.reviewsCount}>(180+ Reviews)</span>
-              </div>
+              <a 
+                href="https://maps.app.goo.gl/mYnmHA8GqxmoZ4qUA" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.trustItemLink}
+              >
+                <div className={styles.trustItem}>
+                  <span className={styles.stars}>★★★★★</span>
+                  <span className={styles.ratingVal}>4.9/5 Rating</span>
+                  <span className={styles.reviewsCount}>(180+ Google Reviews)</span>
+                </div>
+              </a>
               <div className={styles.divider}></div>
               <div className={styles.trustTag}>✓ Licensed & Insured</div>
               <div className={styles.trustTag}>✓ No Hidden Fees</div>

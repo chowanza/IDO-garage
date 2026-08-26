@@ -115,6 +115,22 @@
   padding-bottom: 2rem;
 }
 
+.trustItemLink {
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+  display: inline-block;
+}
+
+.trustItemLink:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+}
+
 .stars {
   color: #fbbf24;
   font-size: 1.15rem;
