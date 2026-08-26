@@ -1,6 +1,6 @@
 .footer {
-  background-color: #05070a;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
   padding-top: 5rem;
   color: var(--text-secondary);
 }
@@ -120,9 +120,9 @@
 
 /* Bottom Bar */
 .bottomBar {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #e2e8f0;
   padding: 2rem 0;
-  background-color: #030406;
+  background-color: #f8fafc;
 }
 
 .bottomContainer {
