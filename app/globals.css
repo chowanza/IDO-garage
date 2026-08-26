@@ -1,24 +1,25 @@
-/* CSS Design System for SOS Garage Door Group */
+/* CSS Design System for SOS Garage Door Group - Light Theme */
 
 :root {
   /* Colors */
-  --bg-dark: #06080c;
-  --bg-card: rgba(15, 23, 42, 0.65);
-  --bg-card-hover: rgba(30, 41, 59, 0.8);
-  --border-light: rgba(255, 255, 255, 0.07);
-  --border-glow: rgba(184, 29, 36, 0.4);
+  --bg-dark: #ffffff; /* White as primary background */
+  --bg-light-gray: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --border-light: #e2e8f0;
+  --border-glow: rgba(184, 29, 36, 0.35);
   
   --primary: #b81d24; /* Crimson Red */
   --primary-hover: #9c131a;
-  --primary-glow: rgba(184, 29, 36, 0.15);
+  --primary-glow: rgba(184, 29, 36, 0.06);
   
-  --secondary: #38bdf8; /* Tech Blue */
-  --secondary-glow: rgba(56, 189, 248, 0.15);
+  --secondary: #0f172a; /* Slate Black */
+  --secondary-glow: rgba(15, 23, 42, 0.05);
   
-  --accent-red: #ef4444; /* Emergency Red */
+  --accent-red: #b81d24; /* Crimson Red for Emergency */
   
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
+  --text-primary: #0f172a; /* Slate Black */
+  --text-secondary: #475569; /* Slate Gray */
   --text-muted: #64748b;
   
   /* Fonts */
@@ -87,39 +88,37 @@ p {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(184, 29, 36, 0.15);
   margin-bottom: 1rem;
 }
 
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary);
 }
 
 .section-desc {
   max-width: 600px;
   margin: 0 auto;
   font-size: 1.1rem;
+  color: var(--text-secondary);
 }
 
-/* Glassmorphism Cards */
+/* Card Styling - High contrast light border and shadow */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-light);
   border-radius: 16px;
   padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
   transform: translateY(-5px);
   border-color: var(--border-glow);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 20px 0 var(--primary-glow);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Buttons */
@@ -139,40 +138,41 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, #d97706 100%);
-  color: #000;
+  background: var(--primary);
+  color: #ffffff;
   border: none;
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 4px 14px rgba(184, 29, 36, 0.2);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #fbbf24 0%, var(--primary) 100%);
-  box-shadow: 0 4px 25px var(--primary-glow);
+  background: var(--primary-hover);
+  box-shadow: 0 6px 20px rgba(184, 29, 36, 0.3);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-dark);
   color: var(--text-primary);
-  border: 1px solid var(--border-light);
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--text-secondary);
+  background: #f8fafc;
+  border-color: #94a3b8;
   transform: translateY(-2px);
 }
 
 .btn-emergency {
-  background: linear-gradient(135deg, var(--accent-red) 0%, #b91c1c 100%);
+  background: var(--accent-red);
   color: #fff;
   border: none;
-  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.25);
+  box-shadow: 0 4px 14px rgba(184, 29, 36, 0.25);
 }
 
 .btn-emergency:hover {
-  background: linear-gradient(135deg, #f87171 0%, var(--accent-red) 100%);
-  box-shadow: 0 4px 25px rgba(239, 68, 68, 0.4);
+  background: var(--primary-hover);
+  box-shadow: 0 6px 20px rgba(184, 29, 36, 0.35);
   transform: translateY(-2px);
 }
 
@@ -184,7 +184,7 @@ p {
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, rgba(56,189,248,0.03) 50%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(184,29,36,0.02) 0%, rgba(255,255,255,0) 70%);
   z-index: -1;
   pointer-events: none;
   filter: blur(40px);
@@ -198,17 +198,17 @@ p {
 .form-label {
   display: block;
   font-family: var(--font-headings);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .form-control {
   width: 100%;
   padding: 0.85rem 1rem;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--border-light);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -219,8 +219,8 @@ p {
 .form-control:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
-  background: rgba(30, 41, 59, 0.7);
+  box-shadow: 0 0 0 3px rgba(184, 29, 36, 0.12);
+  background: #ffffff;
 }
 
 /* Custom Scrollbar */
@@ -229,13 +229,13 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 5px;
-  border: 2px solid var(--bg-dark);
+  border: 2px solid #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb:hover {

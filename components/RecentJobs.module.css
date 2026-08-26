@@ -88,22 +88,22 @@
 }
 
 .ctaBox {
-  background: rgba(184, 29, 36, 0.05);
-  border: 1px solid rgba(184, 29, 36, 0.15);
+  background: rgba(184, 29, 36, 0.04);
+  border: 1px solid rgba(184, 29, 36, 0.12);
   border-radius: 16px;
   padding: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 .ctaTitle {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .ctaDesc {
