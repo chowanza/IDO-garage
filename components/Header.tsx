@@ -15,15 +15,22 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.navContainer}`}>
         <a href="#" className={styles.logo}>
-          <span className={styles.logoIcon}>🆘</span>
-          <span className={styles.logoText}>SOS</span>
-          <span className={styles.logoSub}>Garage Group</span>
+          <img 
+            src="/logo.png" 
+            alt="SOS Garage Door Group Logo" 
+            className={styles.logoImg} 
+          />
+          <div className={styles.logoTextContainer}>
+            <span className={styles.logoText}>SOS</span>
+            <span className={styles.logoSub}>Garage Group</span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
         <nav className={styles.desktopNav}>
           <a href="#services" className={styles.navLink}>Services</a>
           <a href="#estimator" className={styles.navLink}>Estimator</a>
+          <a href="#gallery" className={styles.navLink}>Recent Jobs</a>
           <a href="#contact" className={styles.navLink}>Contact</a>
           <a href="tel:+17738392852" className="btn btn-primary">
             <Phone size={18} />
@@ -45,6 +52,7 @@ export default function Header() {
       <div className={`${styles.mobileNav} ${isOpen ? styles.mobileNavOpen : ""}`}>
         <a href="#services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</a>
         <a href="#estimator" className={styles.mobileNavLink} onClick={toggleMenu}>Estimator</a>
+        <a href="#gallery" className={styles.mobileNavLink} onClick={toggleMenu}>Recent Jobs</a>
         <a href="#contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</a>
         <a href="tel:+17738392852" className={`btn btn-primary ${styles.mobileNavBtn}`} onClick={toggleMenu}>
           <Phone size={18} />

@@ -10,9 +10,15 @@ export default function Footer() {
         {/* Brand Column */}
         <div className={styles.column}>
           <a href="#" className={styles.logo}>
-            <span className={styles.logoIcon}>🆘</span>
-            <span className={styles.logoText}>SOS</span>
-            <span className={styles.logoSub}>Garage Group</span>
+            <img 
+              src="/logo.png" 
+              alt="SOS Garage Door Group Logo" 
+              className={styles.logoImg} 
+            />
+            <div className={styles.logoTextContainer}>
+              <span className={styles.logoText}>SOS</span>
+              <span className={styles.logoSub}>Garage Group</span>
+            </div>
           </a>
           <p className={styles.description}>
             Residential and commercial garage door services, spring repair, and opener installation. Serving Chicago and suburbs 24/7.

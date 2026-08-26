@@ -68,6 +68,15 @@ export default function Services() {
             </div>
           ))}
         </div>
+
+        {/* Dynamic CTA at the bottom of services */}
+        <div className={styles.servicesFooterCta}>
+          <p className={styles.ctaText}>Don't see your specific overhead door issue? We repair all brands, models, and custom setups.</p>
+          <a href="tel:+17738392852" className="btn btn-emergency">
+            <span>Call for Immediate Dispatch:</span>
+            <strong>(773) 839-2852</strong>
+          </a>
+        </div>
       </div>
     </section>
   );
